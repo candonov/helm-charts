@@ -12,7 +12,6 @@ aws ecr create-repository --repository-name helm-demo-app-chart --region us-east
 ```
 Build and push chart
 ```
-cd chart
 helm package demo-app
 helm push helm-demo-app-chart-0.1.0.tgz oci://$ACCOUNT_NUMBER.dkr.ecr.us-east-1.amazonaws.com/
 ```
