@@ -52,6 +52,9 @@ EOF
 Install argocd-ecr-updater helm chart to autorotate the password
 ```
 helm repo add argocd-ecr-updater https://karlderkaefer.github.io/argocd-ecr-updater
-helm upgrade --install argocd-ecr-updater -n argocd --set serviceAccount.create=false --set serviceAccount.name=argocd-ecr-updater argocd-ecr-updater/argocd-ecr-updater
+helm upgrade --install argocd-ecr-updater -n argocd \
+       --set serviceAccount.create=false \
+       --set serviceAccount.name=argocd-ecr-updater \
+       argocd-ecr-updater/argocd-ecr-updater
 ```
 
