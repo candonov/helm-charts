@@ -1,0 +1,18 @@
+apiVersion: awsblueprints.io/v1alpha1
+kind: S3IRSA
+metadata:
+  name: {{ include "s3-irsa-app.name" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "s3-irsa-app.name" . }}
+    helm.sh/chart: {{ include "s3-irsa-app.chart" . }}
+  annotations:
+    argocd.argoproj.io/sync-wave: "-10"
+spec:
+  awsAccountID: "$(ACCOUNT_ID)"
+  eksOIDC: "$(OIDC)"
+  resourceConfig:
+    providerConfigName: aws-provider-config
+    region: us-east-1
+  envFrom:
+  - configMapRef:
+      name: {{ include "s3-irsa-app.name" . }}
