@@ -13,6 +13,3 @@ spec:
   resourceConfig:
     providerConfigName: aws-provider-config
     region: us-east-1
-  envFrom:
-  - configMapRef:
-      name: {{ include "s3-irsa-app.name" . }}
