@@ -20,7 +20,7 @@ spec:
       - name: aws-cli
         image: amazon/aws-cli:latest
         command: ["/bin/sh"]
-        args: ["-c", "while true; do aws s3 ls; sleep 10; done"]
+        args: ["-c", "while true; do aws s3 ls; sleep 120; done"]
         resources:
           requests:
             memory: "64Mi"
