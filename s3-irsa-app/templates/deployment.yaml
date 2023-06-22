@@ -17,7 +17,8 @@ spec:
     spec:
       serviceAccountName: {{ include "s3-irsa-app.name" . }}
       containers:
-      - image: amazon/aws-cli:latest
+      - name: aws-cli
+        image: amazon/aws-cli:latest
         command: ["/bin/sh"]
         args: ["-c", "while true; do aws s3 ls; sleep 10; done"]
         resources:
