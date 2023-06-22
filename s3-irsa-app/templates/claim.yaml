@@ -8,8 +8,8 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "-10"
 spec:
-  awsAccountID: "$(ACCOUNT_ID)"
-  eksOIDC: "$(OIDC)"
+  awsAccountID: {{ .Values.awsAccountID }}
+  eksOIDC: {{ .Values.eksOIDC }}
   resourceConfig:
     providerConfigName: aws-provider-config
     region: us-east-1
