@@ -33,10 +33,10 @@ spec:
           limits:
             memory: "64Mi"
             cpu: "250m"
-      env:
-      - name: BUCKET_NAME
-        valueFrom:
-          configMapKeyRef:
-            name: {{ include "s3-irsa-app.name" . }}
-            key: bucketName
+        env:
+        - name: BUCKET_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: {{ include "s3-irsa-app.name" . }}
+              key: bucketName
       restartPolicy: Always
