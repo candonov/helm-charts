@@ -1,4 +1,3 @@
 s3irsa:
   enabled: true
-  tags:
-    owner: sofia-meetup
+
