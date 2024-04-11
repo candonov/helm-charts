@@ -1,2 +1,4 @@
 s3irsa:
   enabled: true
+  tags:
+    owner: test-with-sumo
