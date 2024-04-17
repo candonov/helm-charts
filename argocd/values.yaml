@@ -1,4 +1,2 @@
 s3irsa:
   enabled: true
-  tags:
-    owner: my-team
