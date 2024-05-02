@@ -1,20 +1,20 @@
-{{- if .Values.s3irsa.enabled }}
+{{- if .Values.s3.enabled }}
 apiVersion: awsblueprints.io/v1alpha1
-kind: S3IRSA
+kind: S3awscli
 metadata:
-  name: {{ include "s3-irsa-app.name" . }}
+  name: {{ include "s3-awscli-app.name" . }}
   labels:
-    app.kubernetes.io/name: {{ include "s3-irsa-app.name" . }}
-    helm.sh/chart: {{ include "s3-irsa-app.chart" . }}
+    app.kubernetes.io/name: {{ include "s3-awscli-app.name" . }}
+    helm.sh/chart: {{ include "s3-awscli-app.chart" . }}
   annotations:
     argocd.argoproj.io/sync-wave: "-10"
 spec:
   writeConnectionSecretToRef:
-    name: {{ include "s3-irsa-app.name" . }}
+    name: {{ include "s3-awscli-app.name" . }}
   resourceConfig:
     providerConfigName: aws-provider-config
     region: us-east-1
-    {{- with .Values.s3irsa.tags }}
+    {{- with .Values.s3.tags }}
     tags:
       {{- toYaml . | nindent 6 }}
     {{- end }}
