@@ -1,2 +1,4 @@
 s3:
   enabled: true
+  tags:
+    owner: my-team
