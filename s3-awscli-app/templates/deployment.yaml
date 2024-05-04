@@ -18,7 +18,7 @@ spec:
       serviceAccountName: {{ include "s3-awscli-app.name" . }}
       containers:
       - name: aws-cli
-        image: public.ecr.aws/aws-cli/aws-cli:latest
+        image: 352858358668.dkr.ecr.us-east-1.amazonaws.com/ecr-public/aws-cli/aws-cli:latest
         command: ["/bin/sh"]
         args:
           - "-c"
